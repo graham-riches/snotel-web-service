@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnotelService.Tests", "SnotelService.Tests\SnotelService.Tests.csproj", "{0D0A44E9-7E55-4B73-9213-4C874C394664}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnotelService", "SnotelService\SnotelService.csproj", "{CC71D76A-B1B0-4525-AFB4-1D09A54F8274}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D0A44E9-7E55-4B73-9213-4C874C394664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D0A44E9-7E55-4B73-9213-4C874C394664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D0A44E9-7E55-4B73-9213-4C874C394664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D0A44E9-7E55-4B73-9213-4C874C394664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC71D76A-B1B0-4525-AFB4-1D09A54F8274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC71D76A-B1B0-4525-AFB4-1D09A54F8274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC71D76A-B1B0-4525-AFB4-1D09A54F8274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC71D76A-B1B0-4525-AFB4-1D09A54F8274}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F941ED0A-E222-414B-A64D-4E97D8C591DF}
+	EndGlobalSection
+EndGlobal
