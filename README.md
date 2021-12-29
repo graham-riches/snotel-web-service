@@ -1,2 +1,2 @@
 # snotel-web-service
-Web service for scraping NRCS Snotel Data 
+Back-end web service wrapper for the NRCS SOAP API to create a more usable Snotel Data API.
