@@ -18,7 +18,7 @@ namespace SnotelService.Interfaces
         /// <param name="stationTriplet">The station triplet string: i.e. "787:MT:SNTL"</param>
         /// <param name="dataType">Data type to retrieve</param>
         /// <returns>Data response</returns>
-        public Task<DataResponse> GetCurrentData(string stationTriplet, ElementType dataType);
+        public Task<DataResponse> GetCurrentDataAsync(string stationTriplet, ElementType dataType);
 
         /// <summary>
         /// Get hourly station data for a single data type
@@ -28,7 +28,7 @@ namespace SnotelService.Interfaces
         /// <param name="start">Start time</param>
         /// <param name="end">End time</param>
         /// <returns></returns>
-        public Task<HourlyDataResponse> GetHourlyData(string stationTriplet, ElementType dataType, DateTime start, DateTime? end = null);
+        public Task<HourlyDataResponse> GetHourlyDataAsync(string stationTriplet, ElementType dataType, DateTime start, DateTime? end = null);
 
         /// <summary>
         /// Get snotel stations. If no arguments are passed, the default is to return all stations
@@ -38,6 +38,6 @@ namespace SnotelService.Interfaces
         /// <param name="minElevation">Minimum site elevation</param>
         /// <param name="maxElevation">Maximum site elevation</param>
         /// <returns></returns>
-        public Task<StationMetadataResponse[]> GetStations(string[]? states = null, string[]? counties = null, int minElevation = 0, int maxElevation = 100000);
+        public Task<StationMetadataResponse[]> GetStationsAsync(string[]? states = null, string[]? counties = null, int minElevation = 0, int maxElevation = 100000);
     }
 }

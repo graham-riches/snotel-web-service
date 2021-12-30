@@ -6,11 +6,13 @@ namespace SnotelService.Responses
     {
         private NRCS.data _data;
         private ElementType _type;
+        public Decimal Value { get; }
 
         public DataResponse(NRCS.data data, ElementType type)
         {
             _data = data;
-            _type = type;            
+            _type = type;
+            Value = data.values[0] ?? 0;
         }
 
         public override string ToString() =>

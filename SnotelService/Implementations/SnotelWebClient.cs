@@ -20,7 +20,7 @@ namespace SnotelService.Implementations
             return new StationMetadataResponse(result.@return);
         }
 
-        public async Task<DataResponse> GetCurrentData(string stationTriplet, ElementType dataType)
+        public async Task<DataResponse> GetCurrentDataAsync(string stationTriplet, ElementType dataType)
         {
             var now = DateTime.Now.ToString("MM/dd/yyyy");
             var result = await _client.getDataAsync(new string[] {stationTriplet}, ElementTypeExtensions.ToFriendlyString(dataType), 1, new NRCS.heightDepth(),
@@ -28,7 +28,7 @@ namespace SnotelService.Implementations
             return new DataResponse(result.@return[0], dataType);
         }
 
-        public async Task<HourlyDataResponse> GetHourlyData(string stationTriplet, ElementType dataType, DateTime start, DateTime? end)
+        public async Task<HourlyDataResponse> GetHourlyDataAsync(string stationTriplet, ElementType dataType, DateTime start, DateTime? end)
         {
             var endTime = end ?? DateTime.Now.AddDays(1);
             var result = await _client.getHourlyDataAsync(new string[] { stationTriplet }, ElementTypeExtensions.ToFriendlyString(dataType), 1, new NRCS.heightDepth(),
@@ -36,7 +36,7 @@ namespace SnotelService.Implementations
             return new HourlyDataResponse(result.@return, dataType);
         }
 
-        public async Task<StationMetadataResponse[]> GetStations(string[]? states = null, string[]? counties = null, int minElevation = 0, int maxElevation = 100000)
+        public async Task<StationMetadataResponse[]> GetStationsAsync(string[]? states = null, string[]? counties = null, int minElevation = 0, int maxElevation = 100000)
         {
             var matchAll = new string[] { "*" };
             states = states ?? matchAll;
