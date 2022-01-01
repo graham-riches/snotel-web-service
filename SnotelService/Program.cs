@@ -13,8 +13,5 @@ Console.WriteLine(temperature.ToString());
 var hourlyTemperature = await service.GetHourlyDataAsync("787:MT:SNTL", ElementType.AirTemperature, DateTime.Now.AddHours(-24));
 Console.WriteLine(hourlyTemperature.ToString());
 
-var montanaStations = await service.GetStationsAsync(new string[] {"MT"} );
-foreach (var station in montanaStations)
-{
-    Console.WriteLine(station.ToString());
-}
+var dailyTemperature = await service.GetDailyDataAsync("787:MT:SNTL", ElementType.AirTemperatureMaximum, DateTime.Now.AddDays(-25), DateTime.Now.AddDays(-10));
+Console.WriteLine(dailyTemperature.ToString());

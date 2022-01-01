@@ -36,6 +36,15 @@ namespace SnotelService.Implementations
             return new HourlyDataResponse(result.@return, dataType);
         }
 
+        public async Task<DailyDataResponse> GetDailyDataAsync(string stationTriplet, ElementType dataType, DateTime start, DateTime? end = null)
+        {
+            var endTime = end ?? DateTime.Now;
+            var result = await _client.getDataAsync(new string[] { stationTriplet }, ElementTypeExtensions.ToFriendlyString(dataType), 1, new NRCS.heightDepth(),
+                NRCS.duration.DAILY, false, start.ToString("MM/dd/yyyy"), endTime.ToString("MM/dd/yyyy"), true);
+            var values = result.@return;
+            return new DailyDataResponse(values[0], dataType);
+        }
+
         public async Task<StationMetadataResponse[]> GetStationsAsync(string[]? states = null, string[]? counties = null, int minElevation = 0, int maxElevation = 100000)
         {
             var matchAll = new string[] { "*" };

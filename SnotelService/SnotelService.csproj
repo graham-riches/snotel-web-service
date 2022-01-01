@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>SnotelAPI</PackageId>
-		<Version>0.0.2</Version>
+		<Version>0.0.5</Version>
 		<Authors>graham-riches</Authors>
 		<Company>GitHub</Company>
 		<PackageDescription>NRCS Web API for Snotel Data</PackageDescription>

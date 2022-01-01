@@ -2,18 +2,20 @@
 
 namespace SnotelService.Responses
 {
-    public class HourlyDataResponse : IDataResponse
+    public class DailyDataResponse : IDataResponse
     {
         private ElementType _type;
         public DataPoint[] DataPoints;
 
-        public HourlyDataResponse(NRCS.hourlyData[] data, ElementType type)
+        public DailyDataResponse(NRCS.data data, ElementType type)
         {
             _type = type;
-            DataPoints = new DataPoint[data[0].values.Length];
+            DataPoints = new DataPoint[data.values.Length];
+            var start = DateTime.Parse(data.beginDate);
             for (int i = 0; i < DataPoints.Length; i++)
             {
-                DataPoints[i] = new DataPoint(data[0].values[i].value, i, data[0].values[i].dateTime);
+                var timestamp = start.AddDays(i);
+                DataPoints[i] = new DataPoint(data.values[i] ?? 0, i, timestamp.ToString("MM/dd/yyyy HH:mm:ss"));
             }
         }
 

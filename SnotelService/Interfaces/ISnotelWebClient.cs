@@ -31,6 +31,16 @@ namespace SnotelService.Interfaces
         public Task<HourlyDataResponse> GetHourlyDataAsync(string stationTriplet, ElementType dataType, DateTime start, DateTime? end = null);
 
         /// <summary>
+        /// Get daily site data over a time range for a single data type
+        /// </summary>
+        /// <param name="stationTriplet">The station triplet string: i.e. "787:MT:SNTL"</param>
+        /// <param name="dataType">Data type to retrieve</param>
+        /// <param name="start">Start date</param>
+        /// <param name="end">End date</param>
+        /// <returns></returns>
+        public Task<DailyDataResponse> GetDailyDataAsync(string stationTriplet, ElementType dataType, DateTime start, DateTime? end = null);
+
+        /// <summary>
         /// Get snotel stations. If no arguments are passed, the default is to return all stations
         /// </summary>
         /// <param name="states">Array of states, can include wildcard patterns</param>
